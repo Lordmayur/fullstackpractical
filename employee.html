@@ -1,0 +1,78 @@
+<html>
+<head>
+<style>
+input[type=button] {
+    width: 10%;
+    background-color: #a2937a;
+    color: white;
+    padding: 8px 0;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+input[type=button]:hover {
+    background-color: green;
+}
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+<script>
+function cal() {
+    var bs1, pe1, hr1, in1, t1, te1, er1, td1, ns1;
+
+    bs1 = Number(document.getElementById("bs").value);
+    pe1 = Number(document.getElementById("pe").value);
+    hr1 = Number(document.getElementById("hr").value);
+    in1 = Number(document.getElementById("in").value);
+    t1 = Number(document.getElementById("t").value);
+    er1 = Number(document.getElementById("da").value);
+
+    te1 = bs1 + hr1 + t1 + er1;
+    document.getElementById("te").value = te1;
+
+    td1 = pe1 + in1;
+    document.getElementById("td").value = td1;
+
+    ns1 = te1 - td1;
+    document.getElementById("ns").value = ns1;
+}
+</script>
+</head>
+<body>
+    <br><br><br><br>
+<h1 align="center"><font color="blue">Employee Salary Statement</font></h1>
+<table align="center" border="3" width="35%">
+<tr> <td> Emp No </td><td><input type="number" name="en" id="en"></td> </tr>
+<tr> <td> Emp Name </td> <td><input type="text" name="ep" id="ep"></td> </tr>
+<tr> <td> Designation </td><td> <select>
+    <option value="Employee">Employee</option>
+    <option value="Accountant">Accountant</option>
+    <option value="Manager">Manager</option>
+    <option value="Team leader">Team leader</option>
+    <option value="Senior Manager">Senior Manager</option>
+    <option value="Vice president">Vice president</option>
+    <option value="Director">Director</option>
+</select></td> </tr>
+<tr> <td> Date of joining</td><td><input type="date"></td></tr>
+</table>
+<br>
+<table align="center" border="3" width="50%">
+<tr>
+<td><h2>Earning</h2></td><td></td>
+<td><h2>Deduction</h2></td><td></td>
+</tr>
+<tr><td> Basic Salary</td><td><input type="number" name="bs" id="bs"></td><td>PF</td><td><input type="number" name="pe" id="pe"></td></tr>
+<tr><td> HRA</td><td><input type="number" name="hr" id="hr"></td><td>Insurance</td><td><input type="number" name="in" id="in"></td></tr>
+<tr><td> TA</td><td><input type="number" name="t" id="t"></td></tr>
+<tr><td> DA</td><td><input type="number" name="da" id="da"></td></tr>
+<tr><td><h4>Total earning</h4></td><td><input type="number" name="te" id="te"></td><td><h4>Total deduction</h4></td><td><input type="number" name="td" id="td"></td></tr>
+<tr align="center">
+<td><h2>Net Salary</h2></td><td><input type="number" name="ns" id="ns"></td>
+</tr>
+</table>
+<h2 align="center"><input type="button" value="calculate" onclick="cal()"></h2>
+</body>
+</html>
